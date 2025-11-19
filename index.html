@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>BestellApp – Pizza Avanti</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" href="assets/styles.css">
@@ -9,7 +10,7 @@
 </head>
 <body onload="init()">
 
-<!-- Top-Bar wie im Screenshot -->
+<!-- Top bar as shown in the screenshot -->
 <header class="topbar">
     <div class="topbar-left">
     <img src="img/logo.png" class="topbar-logo" alt="BestellApp Logo">
@@ -23,15 +24,15 @@
     </div>
 </header>
 
-<!-- Gesamt-Content auf max. Breite begrenzen -->
+<!-- Limit total content to max. width -->
 <div class="page-wrapper">
 
     <main class="main">
 
-        <!-- LINKER BEREICH: Restaurant + Produkte -->
+        <!-- LEFT AREA: Restaurant + Products -->
         <section class="produkte">
 
-            <!-- Restaurant-Header (Logo + Banner + Infos) -->
+             <!-- Restaurant header (logo + banner + information) -->
             <div class="restaurant-card">
                 <div class="restaurant-top">
                     <div class="restaurant-logo-box">
@@ -51,7 +52,7 @@
                     </div>
                 </div>
 
-                <!-- Tabs wie im Screenshot -->
+              
                 <div class="tabs">
                     <button id="tab-alle" class="tab-button" onclick="setKategorie('alle')">Alles</button>
                     <button id="tab-pizza" class="tab-button" onclick="setKategorie('Pizza')">Pizza</button>
@@ -60,67 +61,65 @@
                 </div>
             </div>
 
-            <!-- Suchfeld -->
+            <!-- Search field -->
             <div class="search-box">
                 <input type="text" id="search-input"
                        placeholder=" 🔍  Suche nach Gericht..."
                        onkeyup="setSuche()">
             </div>
 
-            <!-- Produktliste: einfache Liste wie im Screenshot -->
-            <div id="product-list" class="product-list">
-                <!-- Wird per JS gefüllt -->
-            </div>
+            <!-- Product list: simple list as shown in the screenshot -->
+            <div id="product-list" class="product-list"></div>
         </section>
 
-        <!-- RECHTER BEREICH: Warenkorb -->
+       <!-- RIGHT AREA: Shopping cart -->
         <aside class="warenkorb" id="cart-box">
-            <div class="warenkorb-header" onclick="toggleWarenkorbMobile()">
-    <h2 class="warenkorb-title">Warenkorb</h2>
-    <img class="cart-toggle-icon" id="cart-toggle-icon" src="img/arrow-down.svg">
-</div>
-            <div id="cart-empty-text" class="cart-empty">
-                Dein Warenkorb ist noch leer.
+    <div class="warenkorb-header" onclick="toggleWarenkorbMobile()">
+        <h2 class="warenkorb-title">Warenkorb</h2>
+        <img class="cart-toggle-icon" id="cart-toggle-icon" src="img/arrow-down.svg">
+    </div>
+
+    <!-- NEW: all order content in .cart-body -->
+    <div class="cart-body">
+        <div id="cart-empty-text" class="cart-empty">
+            Dein Warenkorb ist noch leer.
+        </div>
+
+        <table class="cart-table">
+            <tbody id="cart-items"></tbody>
+        </table>
+
+        <hr class="cart-separator">
+
+        <div class="cart-summary">
+            <div class="cart-row">
+                <span>Zwischensumme</span>
+                <span id="cart-subtotal">0,00 €</span>
             </div>
-
-            <table class="cart-table">
-                <tbody id="cart-items">
-                <!-- Zeilen kommen aus JS -->
-                </tbody>
-            </table>
-
-            <hr class="cart-separator">
-
-            <div class="cart-summary">
-                <div class="cart-row">
-                    <span>Zwischensumme</span>
-                    <span id="cart-subtotal">0,00 €</span>
-                </div>
-                <div class="cart-row">
-                    <span>Lieferkosten</span>
-                    <span id="cart-delivery">3,50 €</span>
-                </div>
+            <div class="cart-row">
+                <span>Lieferkosten</span>
+                <span id="cart-delivery">3,50 €</span>
             </div>
+        </div>
 
-            <hr class="cart-separator-strong">
+        <hr class="cart-separator-strong">
 
-            <div class="cart-total-row-box">
-                <span class="cart-total-label">Gesamt</span>
-                <span class="cart-total-value" id="cart-total">3,50 €</span>
-            </div>
+        <div class="cart-total-row-box">
+            <span class="cart-total-label">Gesamt</span>
+            <span class="cart-total-value" id="cart-total">3,50 €</span>
+        </div>
+    </div>
 
-            <button id="order-button" class="order-button" onclick="bestellen()">
-                Jetzt bestellen
-            </button>
-
-            <!--<p id="order-message" class="order-message"></p>-->
-        </aside>
+    <button id="order-button" class="order-button" onclick="bestellen()">
+        Jetzt bestellen
+    </button>
+</aside>
 
     </main>
 
 </div>
 
-<!-- Popup für Bestellung -->
+<!-- Popup for order -->
 <div id="order-popup" class="popup-overlay">
     <div class="popup-box">
         <h3>Bestellung abgeschickt!</h3>
