@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: 'Roboto';
     src: url('../fonts/Roboto-Regular.ttf') format('truetype');
@@ -14,13 +16,10 @@
     font-display: swap;
 }
 
-/* Grundlayout / Hintergrund */
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* keine font-family hier! */
 }
 
 html, body {
@@ -28,12 +27,8 @@ html, body {
     background-color: #f3f3f3;
     color: #333333;
     height: 100%;
-    margin: 0;
-    padding: 0;
-
 }
 
-/* Topbar wie im Screenshot */
 
 .topbar {
     height: 56px;
@@ -66,24 +61,24 @@ html, body {
 }
 
 
+
 .page-wrapper {
     max-width: 1200px;
     margin: 0 auto;
-
-    min-height: calc(100% - 56px); 
+    min-height: calc(100% - 56px);
     display: flex;
     flex-direction: column;
 }
 
-/* Hauptlayout: links Produkte, rechts Warenkorb */
+
 
 .main {
     display: flex;
     padding: 16px;
     gap: 16px;
-    justify-content: space-between;  
+    justify-content: space-between;
     align-items: flex-start;
-    flex: 1 0 auto; 
+    flex: 1 0 auto;
 }
 
 .produkte {
@@ -91,7 +86,6 @@ html, body {
 }
 
 
-/* Restaurant-Karte oben links */
 
 .restaurant-card {
     background-color: #ffffff;
@@ -155,7 +149,6 @@ html, body {
     margin-bottom: 20px;
 }
 
-/* Tabs */
 
 .tabs {
     margin-top: 10px;
@@ -181,15 +174,7 @@ html, body {
 .tab-button-active {
     background-color: #f2962c;
     color: #ffffff;
-    font-weight: bold;
 }
-
-.tab-disabled {
-    opacity: 0.4;
-    cursor: default;
-}
-
-/* Suchfeld unter den Tabs */
 
 .search-box {
     margin: 10px 0 8px 0;
@@ -199,19 +184,16 @@ html, body {
     width: 100%;
     padding: 10px 10px;
     border-radius: 6px;
-    border: 0px solid #dddddd;
+    border: 0;
     font-size: 16px;
 }
 
-/* Produktliste als vertikale Liste */
+
 
 .product-list {
     display: flex;
     flex-direction: column;
-    gap: 0px;
 }
-
-/* Produkt-Reihe wie im Screenshot */
 
 .product-card {
     background-color: #ffffff;
@@ -228,14 +210,13 @@ html, body {
     grid-template-columns: 150px 1fr;
     grid-template-rows: auto auto auto;
     column-gap: 20px;
-
-    row-gap: 4px;          
+    row-gap: 4px;
     position: relative;
 }
 
 .product-image {
     grid-column: 1;
-    grid-row: 1 / span 3;     
+    grid-row: 1 / span 3;
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -243,21 +224,14 @@ html, body {
     align-self: center;
 }
 
-.product-content {
-    flex: 1;
-}
-
-/* Falls du das HTML nicht extra anpasst:
-   Wir nutzen einfach bestehende Klassen und richten sie horizontal aus. */
-
 .product-title {
     grid-column: 2;
     grid-row: 1;
     font-size: 20px;
     font-weight: bold;
     color: #333333;
-    margin: 0 0 2px 0;     /* 👈 leichter Abstand nach unten */
-    line-height: 1.2;      /* kompaktere Zeilenhöhe */
+    margin: 0 0 2px 0;
+    line-height: 1.2;
 }
 
 .product-desc {
@@ -266,7 +240,7 @@ html, body {
     font-size: 16px;
     font-weight: normal;
     color: #333333;
-    margin: 0 0 4px 0;     /* 👈 etwas Abstand zum Preis */
+    margin: 0 0 4px 0;
     line-height: 1.25;
 }
 
@@ -280,7 +254,7 @@ html, body {
     font-size: 20px;
     font-weight: bold;
     color: #F78E30;
-    margin: 0;             /* 👈 kein zusätzlicher Abstand mehr */
+    margin: 0;
     line-height: 1.2;
 }
 
@@ -289,19 +263,15 @@ html, body {
     right: 25px;
     top: 50%;
     transform: translateY(-50%);
-
-    width: 40px;              
+    width: 40px;
     height: 40px;
-
     border-radius: 8px;
     border: none;
     background-color: #F78E30;
     cursor: pointer;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 0;
     font-size: 0;
 }
@@ -310,10 +280,8 @@ html, body {
     width: 30px;
     height: 30px;
     object-fit: contain;
-    filter: none; 
 }
 
-/* Warenkorb rechts */
 
 .warenkorb {
     background-color: #ffffff;
@@ -327,7 +295,7 @@ html, body {
     max-width: 100%;
     height: auto;
     flex: 0 0 400px;
-    align-self: flex-start;   
+    align-self: flex-start;
 }
 
 .warenkorb-title,
@@ -335,6 +303,37 @@ html, body {
     text-align: center;
     margin-bottom: 10px;
     font-size: 24px;
+    font-weight: bold;
+}
+
+.warenkorb-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.cart-header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-count-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.cart-toggle-icon {
+    width: 26px;
+    height: 26px;
+    position: relative;
+}
+
+.cart-count {
+    display: none;             
+    align-items: center;
+    gap: 4px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -357,25 +356,21 @@ html, body {
     vertical-align: middle;
 }
 
-/* Name links */
 .cart-table td:nth-child(1) {
     font-weight: 500;
     color: #333333;
     width: 45%;
 }
 
-/* Menge (– 2 +) mittig */
 .cart-table td:nth-child(2) {
     width: 30%;
 }
 
-/* Preis rechts */
 .cart-table td:nth-child(3) {
     text-align: right;
     white-space: nowrap;
 }
 
-/* Müll-Icon ganz rechts */
 .cart-table td:nth-child(4) {
     text-align: right;
     width: 24px;
@@ -391,11 +386,9 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    height: 22px;       
-    min-width: 16px;   
-    line-height: 22px; 
-
+    height: 22px;
+    min-width: 16px;
+    line-height: 22px;
     font-size: 13px;
 }
 
@@ -437,10 +430,6 @@ html, body {
     font-weight: bold;
 }
 
-
-
-/* Buttons im Warenkorb */
-
 .icon-btn {
     border: none;
     background-color: transparent;
@@ -448,7 +437,6 @@ html, body {
     padding: 6px;
 }
 
-/* Plus/Minus im Warenkorb: kleine orange Buttons */
 .cart-qty-controls .icon-btn {
     width: 22px;
     height: 22px;
@@ -462,10 +450,9 @@ html, body {
 .cart-qty-controls .icon-btn img {
     width: 12px;
     height: 12px;
-    filter: brightness(0) invert(1); 
+    filter: brightness(0) invert(1);
 }
 
-/* Müll-Icon rechts schlicht schwarz */
 .cart-table td:last-child .icon-btn {
     background-color: transparent;
 }
@@ -473,13 +460,7 @@ html, body {
 .cart-table td:last-child .icon-btn img {
     width: 20px;
     height: 20px;
-    filter: none;
     margin-left: 10px;
-}
-
-.icon-btn img {
-    width: 20px;
-    height: 20px;
 }
 
 .order-button {
@@ -494,15 +475,8 @@ html, body {
     font-weight: bold;
 }
 
-.order-button:disabled {
-    background-color: #cccccc;
-    cursor: default;
-}
-
-/* --- Bestell-Popup (Lightbox) --- */
-
 .popup-overlay {
-    display: none;              
+    display: none;
     position: fixed;
     inset: 0;
     background-color: rgba(0,0,0,0.4);
@@ -516,7 +490,7 @@ html, body {
 }
 
 .popup-box {
-    background-color: #ffffff;          
+    background-color: #ffffff;
     border-radius: 10px;
     padding: 20px 24px;
     max-width: 400px;
@@ -546,11 +520,12 @@ html, body {
     font-weight: bold;
 }
 
+
 .warenkorb-header {
     display: flex;
-    align-items: center;      
-    justify-content: center;  
-    gap: 12px;                
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
     margin-bottom: 12px;
 }
 
@@ -558,36 +533,25 @@ html, body {
     width: 26px;
     height: 26px;
     position: relative;
-    top: -5px;  
-}
-
-.warenkorb-title {
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.cart-toggle-icon {
-    display: none;       
-    margin-left: 8px;
-    font-size: 18px;
+    top: -1px;
+    display: none;
 }
 
 .cart-body {
-    margin-bottom: 16px; 
+    margin-bottom: 16px;
 }
 
-/* FOOTER --- */
+
 
 .footer {
     background-color: #333333;
     color: #FFFFFF;
-    height: 56px;                       
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 30px;
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 .footer-content {
@@ -612,27 +576,58 @@ html, body {
     opacity: 0.6;
 }
 
-@media (min-width: 901px) {
+
+@media (min-width: 1025px) {
     .warenkorb {
         position: sticky;
         top: 16px;
     }
 }
 
-@media (max-width: 900px) {
+
+@media (max-width: 1024px) {
 
     .main {
         flex-direction: column;
         align-items: stretch;
-        padding-bottom: 260px;
+        padding-bottom: 260px;   
     }
 
-    /* Warenkorb als Bottom-Sheet */
+
+    .product-card {
+        width: 100%;
+        height: auto;
+        grid-template-columns: 110px 1fr;
+        grid-template-rows: auto auto;
+        padding-right: 70px; 
+    }
+
+    .product-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .product-bottom {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .product-price {
+    margin-top: 46px;
+}
+
+    .product-add-btn {
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+  
     .warenkorb {
         position: fixed;
         left: 0;
         right: 0;
-        bottom: 0px;
+        bottom: 0;
         width: 100%;
         max-width: 100%;
         flex: none;
@@ -642,18 +637,16 @@ html, body {
         padding: 12px 16px;
     }
 
-    /* Toggle-Icon nur auf Mobile anzeigen */
     .cart-toggle-icon {
         display: inline-block;
     }
 
-    /* Scrollbereich für Bestell-Liste */
     .cart-body {
         max-height: 40vh;
         overflow-y: auto;
     }
 
-    /* --- Wenn eingeklappt: nur Header + Button sichtbar --- */
+
     .warenkorb.cart-collapsed .cart-body {
         display: none;
     }
@@ -663,3 +656,116 @@ html, body {
         padding-bottom: 12px;
     }
 }
+
+@media (max-width: 600px) {
+
+    .product-card {
+        padding: 12px 16px;
+        grid-template-columns: 100px 1fr;
+    }
+
+    .product-title {
+        font-size: 16px;   
+        line-height: 1.2;
+        margin-bottom: 2px;
+    }
+
+    .product-desc {
+        font-size: 13px;  
+        line-height: 1.3;
+        margin-bottom: 2px;
+        width: 160px;
+    }
+
+    .product-price {
+        font-size: 16px;   
+        line-height: 1.2;
+    }
+
+    .product-bottom {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 350px) {
+
+    .product-image {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (min-width: 901px) {
+    .warenkorb {
+        position: sticky;
+        top: 16px;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .main {
+        flex-direction: column;
+        align-items: stretch;
+        padding-bottom: 260px;
+    }
+
+    .warenkorb {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+        border-radius: 16px 16px 0 0;
+        box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+        z-index: 50;
+        padding: 12px 16px;
+    }
+
+  
+    .warenkorb-header {
+        justify-content: space-between;
+    }
+
+    .cart-count {
+        display: flex;
+    }
+
+    .cart-toggle-icon {
+        display: inline-block;
+    }
+
+    .cart-body {
+        max-height: 40vh;
+        overflow-y: auto;
+        margin-bottom: 16px;
+    }
+
+    .warenkorb.cart-collapsed .cart-body {
+        display: none;
+    }
+
+    .warenkorb.cart-collapsed {
+        padding-top: 10px;
+        padding-bottom: 12px;
+    }
+
+    .product-card {
+        grid-template-columns: 110px 1fr;
+        height: auto;
+        min-height: 120px;
+    }
+
+    .product-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    .product-title { font-size: 18px; }
+    .product-desc  { font-size: 14px; }
+    .product-price { font-size: 18px; }
+}
+
