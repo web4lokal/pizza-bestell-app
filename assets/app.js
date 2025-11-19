@@ -11,8 +11,8 @@ var produkte = [
     { id: 7, name: "Knoblauchbrot", beschreibung: "Baguette, Knoblauchbutter", preis: 9.50, bild: "img/knoblauchbrot.png", kategorie: "Beilagen" },
 
     // Desserts
-    { id: 8, name: "Tiramisu", beschreibung: "Dessert-Klassiker", preis: 4.50, bild: "img/tiramisu.png", kategorie: "Dessert" },
-    { id: 9, name: "Vanilleeis", beschreibung: "Mit Sahne", preis: 3.80, bild: "img/vanilleeis.png", kategorie: "Dessert" }
+    { id: 8, name: "Tiramisu", beschreibung: "Eier, Zucker, Mascarpone, Espresso, Löffelbiskuits", preis: 4.50, bild: "img/tiramisu.png", kategorie: "Dessert" },
+    { id: 9, name: "Vanilleeis", beschreibung: "Milch, Sahne, Vanillepulver, Glukose, Milchpulver", preis: 3.80, bild: "img/vanilleeis.png", kategorie: "Dessert" }
 ];
 
 // Warenkorb als Array
