@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>BestellApp – Pizza Avanti</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="assets/styles.css">
+
+</head>
+<body onload="init()">
+
+<!-- Top-Bar wie im Screenshot -->
+<header class="topbar">
+    <div class="topbar-left">
+    <img src="img/logo.png" class="topbar-logo" alt="BestellApp Logo">
+</div>
+    <div class="topbar-right">
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+<!-- Gesamt-Content auf max. Breite begrenzen -->
+<div class="page-wrapper">
+
+    <main class="main">
+
+        <!-- LINKER BEREICH: Restaurant + Produkte -->
+        <section class="produkte">
+
+            <!-- Restaurant-Header (Logo + Banner + Infos) -->
+            <div class="restaurant-card">
+                <div class="restaurant-top">
+                    <div class="restaurant-logo-box">
+                        <img src="img/logo-avanti.png" alt="Pizza Avanti Logo">
+                    </div>
+                    <div class="restaurant-banner-box">
+                        <img src="img/head_banner.png" alt="Pizza Banner">
+                    </div>
+                </div>
+
+                <div class="restaurant-info">
+                    <h1 class="restaurant-name">Pizza Avanti</h1>
+                    <div class="restaurant-meta">
+                        <span>⭐  4,9 (612)</span>
+                        <span>🛍️  Min. 20,00 €</span>
+                        <span>🚗  5,00 € Lieferung</span>
+                    </div>
+                </div>
+
+                <!-- Tabs wie im Screenshot -->
+                <div class="tabs">
+                    <button id="tab-alle" class="tab-button" onclick="setKategorie('alle')">Alles</button>
+                    <button id="tab-pizza" class="tab-button" onclick="setKategorie('Pizza')">Pizza</button>
+                    <button id="tab-beilagen" class="tab-button" onclick="setKategorie('Beilagen')">Beilagen</button>
+                    <button id="tab-dessert" class="tab-button" onclick="setKategorie('Dessert')">Dessert</button>
+                </div>
+            </div>
+
+            <!-- Suchfeld -->
+            <div class="search-box">
+                <input type="text" id="search-input"
+                       placeholder=" 🔍  Suche nach Gericht..."
+                       onkeyup="setSuche()">
+            </div>
+
+            <!-- Produktliste: einfache Liste wie im Screenshot -->
+            <div id="product-list" class="product-list">
+                <!-- Wird per JS gefüllt -->
+            </div>
+        </section>
+
+        <!-- RECHTER BEREICH: Warenkorb -->
+        <aside class="warenkorb" id="cart-box">
+            <div class="warenkorb-header" onclick="toggleWarenkorbMobile()">
+    <h2 class="warenkorb-title">Warenkorb</h2>
+    <img class="cart-toggle-icon" id="cart-toggle-icon" src="img/arrow-down.svg">
+</div>
+            <div id="cart-empty-text" class="cart-empty">
+                Dein Warenkorb ist noch leer.
+            </div>
+
+            <table class="cart-table">
+                <tbody id="cart-items">
+                <!-- Zeilen kommen aus JS -->
+                </tbody>
+            </table>
+
+            <hr class="cart-separator">
+
+            <div class="cart-summary">
+                <div class="cart-row">
+                    <span>Zwischensumme</span>
+                    <span id="cart-subtotal">0,00 €</span>
+                </div>
+                <div class="cart-row">
+                    <span>Lieferkosten</span>
+                    <span id="cart-delivery">3,50 €</span>
+                </div>
+            </div>
+
+            <hr class="cart-separator-strong">
+
+            <div class="cart-total-row-box">
+                <span class="cart-total-label">Gesamt</span>
+                <span class="cart-total-value" id="cart-total">3,50 €</span>
+            </div>
+
+            <button id="order-button" class="order-button" onclick="bestellen()">
+                Jetzt bestellen
+            </button>
+
+            <!--<p id="order-message" class="order-message"></p>-->
+        </aside>
+
+    </main>
+
+</div>
+
+<!-- Popup für Bestellung -->
+<div id="order-popup" class="popup-overlay">
+    <div class="popup-box">
+        <h3>Bestellung abgeschickt!</h3>
+        <p id="order-popup-text">
+            Deine Bestellung wurde gespeichert.
+        </p>
+        <button class="popup-button" onclick="popupSchliessen()">OK</button>
+    </div>
+</div>
+
+<script src="assets/app.js"></script>
+
+<footer class="footer">
+    <div class="footer-content">
+        <a href="impressum.html" target="_blank" rel="noopener noreferrer">Impressum</a>
+        <span class="footer-separator">|</span>
+        <a href="datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutz</a>
+    </div>
+</footer>
+
+</body>
+</html>
+
