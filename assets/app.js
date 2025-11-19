@@ -1,10 +1,10 @@
 // Produkte als einfache Objekte
 var produkte = [
-    { id: 1, name: "Pizza Margherita", beschreibung: "Tomaten, Mozzarella", preis: 7.50, bild: "img/pizza_magarita.png", kategorie: "Pizza" },
-    { id: 2, name: "Pizza Salami", beschreibung: "Tomaten, Mozzarella, Salami", preis: 8.50, bild: "img/pizza_salami.png", kategorie: "Pizza" },
-    { id: 3, name: "Pizza Regina", beschreibung: "Schinken, Champignons", preis: 9.00, bild: "img/pizza_regina.png", kategorie: "Pizza" },
-    { id: 4, name: "Pizza Mozzarella", beschreibung: "Viel Käse", preis: 8.90, bild: "img/pizza_mozarella.png", kategorie: "Pizza" },
-    { id: 5, name: "Pizza Vegetaria", beschreibung: "Gemüse", preis: 9.20, bild: "img/pizza_vegetable.png", kategorie: "Pizza" },
+    { id: 1, name: "Pizza Margherita", beschreibung: "Tomaten, Käse", preis: 7.50, bild: "img/pizza_magarita.png", kategorie: "Pizza" },
+    { id: 2, name: "Pizza Salami", beschreibung: "Tomaten, Käse, Salami", preis: 8.50, bild: "img/pizza_salami.png", kategorie: "Pizza" },
+    { id: 3, name: "Pizza Regina", beschreibung: "Tomaten, Käse, Schinken, Champignons", preis: 9.00, bild: "img/pizza_regina.png", kategorie: "Pizza" },
+    { id: 4, name: "Pizza Mozzarella", beschreibung: "Tomaten, Käse, Mozzarella, Basilikum", preis: 8.90, bild: "img/pizza_mozarella.png", kategorie: "Pizza" },
+    { id: 5, name: "Pizza Vegetaria", beschreibung: "Tomaten, Käse, Gemüse", preis: 9.20, bild: "img/pizza_vegetable.png", kategorie: "Pizza" },
 
     // Beilagen
     { id: 6, name: "Beilagensalat", beschreibung: "Gemischter Salat, Tomaten, Oliven", preis: 8.90, bild: "img/beilagensalat.png", kategorie: "Beilagen" },
